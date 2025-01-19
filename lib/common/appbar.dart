@@ -18,13 +18,13 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.lightOliveGreen,
-      leading: IconButton(
-          onPressed: () {
-            if (widget.title != AppStrings.searchFlights) {
-              Navigator.pop(context);
-            }
-          },
-          icon: const Icon(Icons.arrow_back)),
+      leading: widget.title != AppStrings.searchFlights
+          ? IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back))
+          : null,
       title: Text(
         widget.title,
         style: AppTypography.medium18,
