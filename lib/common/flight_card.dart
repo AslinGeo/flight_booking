@@ -1,5 +1,7 @@
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flight_booking/constants/assets.dart';
 import 'package:flight_booking/constants/colors.dart';
+import 'package:flight_booking/constants/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
@@ -49,6 +51,10 @@ class FlightBookingCard extends StatelessWidget {
             fromDestination,
             '4h 30m',
             '',
+          ),
+          const SizedBox(height: 20),
+          const DottedLine(
+            dashColor: Colors.grey,
           ),
           const SizedBox(height: 10),
           Row(
@@ -170,13 +176,7 @@ class FlightBookingCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
         border: Border.all(color: color),
       ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: color,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      child: Text(label, style: AppTypography.captionMedium9),
     );
   }
 }

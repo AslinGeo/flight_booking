@@ -22,12 +22,15 @@ class AppTypography {
     color: AppColors.darkGray,
   );
   static TextStyle bodyRegular16 = const TextStyle(
-  fontFamily: 'Metropolis',
-  fontWeight: FontWeight.w400, 
-  fontSize: 16.0, 
+    fontFamily: 'Metropolis',
+    fontWeight: FontWeight.w400,
+    fontSize: 16.0,
+    color: AppColors.slateGray,
+  );
 
-  color: AppColors.slateGray, 
- 
-);
-
+  static TextStyle captionMedium9 = const TextStyle(
+    fontFamily: 'Metropolis',
+    fontWeight: FontWeight.w500,
+    fontSize: 9.0,
+  );
 }

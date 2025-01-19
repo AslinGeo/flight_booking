@@ -11,4 +11,10 @@ class AppStrings {
   static const String travelInspirations = "Travel Inspirations";
   static const String hotelTitle = "Flight & Hotel Packages";
   static const String ezyTravel = "Ezy Travel";
+  static const String fromAed = "From AED";
+  static const String filter = "Filter";
+  static const String nonStop = "Non-Stop";
+  static const String sort = "Sort";
+  static const String modifySearch = "Modify Search";
+  
 }

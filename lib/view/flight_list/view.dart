@@ -4,6 +4,7 @@ import 'package:flight_booking/common/flight_card.dart';
 import 'package:flight_booking/constants/assets.dart';
 import 'package:flight_booking/constants/colors.dart';
 import 'package:flight_booking/constants/strings.dart';
+import 'package:flight_booking/constants/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
@@ -83,37 +84,50 @@ class _FlightListViewState extends State<FlightListView> {
               ),
               const SizedBox(height: 5),
               Text(
-                'Departure: ${viewModel.searchedFlightDetails['departureDate'] != null ? viewModel.formatDate(viewModel.searchedFlightDetails['departureDate']) : 'Sat, 23 Mar'} - Return: ${viewModel.searchedFlightDetails['returnDate'] != null ? viewModel.formatDate(viewModel.searchedFlightDetails['returnDate']) : 'Sat, 30 Mar'}',
+                '${AppStrings.departure}: ${viewModel.searchedFlightDetails['departureDate'] != null ? viewModel.formatDate(viewModel.searchedFlightDetails['departureDate']) : 'Sat, 23 Mar'} - ${AppStrings.returnText}: ${viewModel.searchedFlightDetails['returnDate'] != null ? viewModel.formatDate(viewModel.searchedFlightDetails['returnDate']) : 'Sat, 30 Mar'}',
                 style: TextStyle(color: Colors.grey[700]),
               ),
+              const SizedBox(height: 5),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '(Round Trip)',
+                    '(${AppStrings.roundTrip})',
                     style: TextStyle(color: Colors.red),
                   ),
                   SizedBox(width: 10),
                   Text(
-                    'Modify Search',
+                    AppStrings.modifySearch,
                     style: TextStyle(color: Colors.green),
                   ),
                 ],
               ),
+              const SizedBox(height: 5),
               const Divider(),
+              const SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const Row(
-                    children: [
-                      Text('Sort'),
-                      Icon(Icons.keyboard_arrow_down_outlined)
-                    ],
-                  ),
-                  const Text('Non-Stop'),
                   Row(
                     children: [
-                      const Text('Filter'),
+                      Text(
+                        AppStrings.sort,
+                        style: AppTypography.captionBold14,
+                      ),
+                      const SizedBox(width: 4),
+                      const Icon(Icons.keyboard_arrow_down_outlined)
+                    ],
+                  ),
+                  Text(
+                    AppStrings.nonStop,
+                    style: AppTypography.captionBold14,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        AppStrings.filter,
+                        style: AppTypography.captionBold14,
+                      ),
                       const SizedBox(width: 10),
                       SvgPicture.asset(AppAssets.filterSvg)
                     ],
@@ -168,7 +182,7 @@ class _FlightListViewState extends State<FlightListView> {
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
           ),
           Text(
-            'From AED ${random.nextInt(1000)}',
+            '${AppStrings.fromAed} ${random.nextInt(1000)}',
             style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 13),
           ),
         ],

@@ -365,12 +365,11 @@ class _HomeState extends State<Home> {
             viewModel.navigateToSearchList(context);
           },
           child: Container(
-            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: AppColors.green,
                 borderRadius: BorderRadius.circular(13)),
             child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Text(
                 AppStrings.searchFlights,
                 style: TextStyle(color: AppColors.white),
@@ -403,7 +402,7 @@ class _HomeState extends State<Home> {
           itemBuilder: (context, index) {
             return TravelCard(
                 imageUrl: viewModel.tours[index]["imageUrl"],
-                width: 250,
+                width: 220,
                 height: 300,
                 destination: viewModel.tours[index]["destination"],
                 description: viewModel.tours[index]["description"]);
